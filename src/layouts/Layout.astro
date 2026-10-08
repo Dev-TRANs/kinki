@@ -1,82 +1,82 @@
 ---
 interface Props {
-  title string;
-  description string;
+  title: string;
+  description?: string;
 }
 
 const { 
   title, 
-  description = 近畿圏の中高生・生徒会役員がつながるコミュニティ「近畿生徒会交流会（K-SCEM）」。学校の垣根を越えて悩みや事例を共有できる場を提供しています。 
+  description = "近畿圏の中高生・生徒会役員がつながるコミュニティ「近畿生徒会交流会（K-SCEM）」。学校の垣根を越えて悩みや事例を共有できる場を提供しています。" 
 } = Astro.props;
 ---
 
-!doctype html
-html lang=ja
-  head
-    meta charset=UTF-8 
-    meta name=viewport content=width=device-width, initial-scale=1.0 
-    title{title}title
-    meta name=description content={description} 
-    link rel=icon type=imagesvg+xml href=favicon.svg 
-    link rel=preconnect href=httpsfonts.googleapis.com
-    link rel=preconnect href=httpsfonts.gstatic.com crossorigin
-    link href=httpsfonts.googleapis.comcss2family=Noto+Sans+JPwght@400;500;700&display=swap rel=stylesheet
-  head
-  body
-    slot 
-  body
-html
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
 
-style isglobal
-  root {
-    --primary #1d4ed8;        信頼感のあるブルー 
-    --primary-light #eff6ff;  薄いブルー背景 
-    --text-main #1f2937;      本文文字色 
-    --text-muted #4b5563;     補足文字色 
-    --bg-gray #f9fafb;        セクション背景グレー 
-    --border #e5e7eb;
-    --accent #f59e0b;         注目バッジ等のオレンジ 
+<style is:global>
+  :root {
+    --primary: #1d4ed8;
+    --primary-light: #eff6ff;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --bg-gray: #f9fafb;
+    --border: #e5e7eb;
+    --accent: #f59e0b;
   }
 
-   {
-    box-sizing border-box;
-    margin 0;
-    padding 0;
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   body {
-    font-family 'Noto Sans JP', sans-serif;
-    color var(--text-main);
-    line-height 1.7;
-    background-color #ffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-main);
+    line-height: 1.7;
+    background-color: #ffffff;
   }
 
   a {
-    color inherit;
-    text-decoration none;
+    color: inherit;
+    text-decoration: none;
   }
 
   .container {
-    max-width 1040px;
-    margin 0 auto;
-    padding 0 1.5rem;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   .section-title {
-    font-size 1.75rem;
-    font-weight 700;
-    text-align center;
-    margin-bottom 2.5rem;
-    position relative;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
   }
 
-  .section-titleafter {
-    content '';
-    display block;
-    width 40px;
-    height 3px;
-    background-color var(--primary);
-    margin 0.75rem auto 0;
-    border-radius 2px;
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
   }
-style
+</style>
