@@ -1,0 +1,15 @@
+# ビルド出力
+dist/
+
+# 依存モジュール
+node_modules/
+
+# 開発用キャッシュ・環境変数
+.astro/
+.env
+.env.*
+!.env.example
+
+# OS一時ファイル
+.DS_Store
+Thumbs.db
