@@ -2,6 +2,7 @@
   "name": "k-scem-website",
   "type": "module",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.15.4",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
