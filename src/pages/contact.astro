@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="団体概要・お問い合わせ | 近畿生徒会交流会（K-SCEM）"
+  description="近畿生徒会交流会の団体基本情報と、参加相談・ご質問窓口（メール・公式Instagram）のご案内です。"
+>
+  <Header />
+
+  <main class="page-main">
+    <div class="page-header">
+      <div class="container">
+        <p class="sub-title">CONTACT & ABOUT</p>
+        <h1 class="page-title">団体概要・お問い合わせ</h1>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- 団体基本情報 -->
+          <div class="info-block">
+            <h2 class="block-title">団体基本情報</h2>
+            <dl class="org-table">
+              <dt>団体名</dt>
+              <dd>近畿生徒会交流会（略称：K-SCEM / 近交会）[cite: 1]</dd>
+
+              <dt>設立日</dt>
+              <dd>2024年1月12日[cite: 1]</dd>
+
+              <dt>理念</dt>
+              <dd>「生徒会役員を孤立させない」[cite: 1]</dd>
+
+              <dt>運営形態</dt>
+              <dd>非加盟制（課外活動プラットフォーム）[cite: 1]</dd>
+
+              <dt>運営メンバー</dt>
+              <dd>8名（近畿圏の中高生による学生主体運営）[cite: 1]</dd>
+
+              <dt>連絡先</dt>
+              <dd>kinki.seitokai@gmail.com[cite: 3]</dd>
+            </dl>
+          </div>
+
+          <!-- お問い合わせ導線 -->
+          <div class="inquiry-block">
+            <h2 class="block-title">お問い合わせ窓口</h2>
+            <p class="inquiry-lead">
+              交流会への参加に関するご相談、学校の先生方からのご質問、取材や協賛に関するお問い合わせは、以下の窓口よりお気軽にご連絡ください。
+            </p>
+
+            <div class="contact-methods">
+              <div class="method-card">
+                <div class="method-icon">✉</div>
+                <div class="method-body">
+                  <h3>メールでのお問い合わせ</h3>
+                  <p>代表メールアドレス宛にお送りください[cite: 3]。</p>
+                  <a href="mailto:kinki.seitokai@gmail.com" class="method-link">
+                    kinki.seitokai@gmail.com[cite: 3]
+                  </a>
+                </div>
+              </div>
+
+              <div class="method-card insta-card">
+                <div class="method-icon">📷</div>
+                <div class="method-body">
+                  <h3>公式Instagram（DM）</h3>
+                  <p>中高生の方からの気軽なご相談・DMを受け付けています[cite: 2, 3]。</p>
+                  <a href="https://www.instagram.com/kinki_seitokai/" target="_blank" rel="noopener noreferrer" class="method-link">
+                    @kinki_seitokai を開く[cite: 3]
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-main {
+    padding-bottom: 5rem;
+  }
+  .page-header {
+    background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .sub-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 3.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .block-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+  }
+
+  /* 概要テーブル */
+  .org-table {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    row-gap: 1.25rem;
+    font-size: 0.95rem;
+  }
+  .org-table dt {
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .org-table dd {
+    margin: 0;
+  }
+
+  /* 問い合わせ */
+  .inquiry-lead {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .method-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--bg-gray);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  .method-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .method-body h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .method-body p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .method-link {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: underline;
+  }
+  .insta-card {
+    background: #fff;
+    border-color: #fbcfe8;
+  }
+  .insta-card .method-link {
+    color: #be185d;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

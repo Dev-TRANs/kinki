@@ -1,0 +1,190 @@
+---
+---
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-badge">
+      <span>近畿圏の中高生・生徒会役員がつながるコミュニティ</span>
+    </div>
+
+    <h1 class="hero-title">
+      生徒会役員を、<br />
+      <span class="highlight">孤立させない。</span>
+    </h1>
+
+    <p class="hero-lead">
+      各校に数名しかいない生徒会役員。答えのない問いに、ひとりで悩んでいませんか？<br class="pc-br" />
+      近畿生徒会交流会は、学校の枠を越えて本音で悩みやアイデアを共有し合える場所です。
+    </p>
+
+    <div class="hero-points">
+      <div class="point-item">
+        <span class="check-icon">✓</span> 学校の承認不要・個人参加OK[cite: 1]
+      </div>
+      <div class="point-item">
+        <span class="check-icon">✓</span> 累計130名以上の中高生が参加[cite: 2]
+      </div>
+      <div class="point-item">
+        <span class="check-icon">✓</span> 参加費 無料
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#event" class="btn btn-primary">次回イベントを見る</a>
+      <a href="#about" class="btn btn-sub">団体の理念・特徴</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding: 5.5rem 0 4.5rem;
+    background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-badge span {
+    display: inline-block;
+    background-color: #dbeafe;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-title {
+    font-size: 3.25rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-title .highlight {
+    color: var(--primary);
+    position: relative;
+  }
+
+  .hero-lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 680px;
+    margin-bottom: 2rem;
+  }
+
+  /* 3つの簡易ポイントバッジ */
+  .hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .point-item {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+  }
+
+  .check-icon {
+    color: #16a34a;
+    font-weight: 800;
+  }
+
+  /* ボタン */
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+  }
+
+  .btn-sub {
+    background-color: #ffffff;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+  }
+
+  .pc-br {
+    display: block;
+  }
+
+  /* スマホ表示 (768px以下) */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 3.5rem 0 3.5rem;
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+    }
+
+    .hero-lead {
+      font-size: 0.95rem;
+    }
+
+    .pc-br {
+      display: none;
+    }
+
+    .hero-points {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.5rem;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+</style>

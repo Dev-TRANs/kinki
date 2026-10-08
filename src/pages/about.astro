@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="団体について・理念 | 近畿生徒会交流会（K-SCEM）"
+  description="近畿生徒会交流会の理念「生徒会役員を孤立させない」と、学校の承認不要で個人参加できる非加盟制の特徴についてご紹介します。"
+>
+  <Header />
+
+  <main class="page-main">
+    <div class="page-header">
+      <div class="container">
+        <p class="sub-title">ABOUT US</p>
+        <h1 class="page-title">近畿生徒会交流会について</h1>
+      </div>
+    </div>
+
+    <!-- 理念セクション -->
+    <section class="section">
+      <div class="container">
+        <div class="philosophy-box">
+          <p class="philosophy-label">理念</p>
+          <h2 class="philosophy-title">「生徒会役員を孤立させない」[cite: 1]</h2>
+          <div class="philosophy-text">
+            <p>
+              各学校に1人しかいない生徒会長、数名しかいない生徒会役員[cite: 1]。<br />
+              赤裸々に相談できる人が極めて少ない環境の中で、在校生徒を代表し、答えのない問いを解き続ける[cite: 1]。<br />
+              この現状は、生徒会役員にとって非常に大きなプレッシャーであると考えました[cite: 1]。
+            </p>
+            <p>
+              そんな現状を打破し、各学校の生徒会役員がストレスフリーで活躍するには、気軽に、赤裸々に何でも相談できる仲間との交流が必要不可欠です[cite: 1]。
+              私たちはその強い想いから、2024年1月に本団体を設立しました[cite: 1]。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3つの特徴 -->
+    <section class="section section-gray">
+      <div class="container">
+        <h2 class="section-heading">私たちの3つの特徴</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <span class="feature-num">01</span>
+            <h3>非加盟制・個人参加OK</h3>
+            <p>
+              他の生徒会組織のような学校単位での加盟制度は導入していません[cite: 1]。学校や生徒会の承認なしで、課外活動として個人単位で気軽に参加していただけます[cite: 1]。
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-num">02</span>
+            <h3>本音で話せるフラットな場</h3>
+            <p>
+              学校の規模や公立・私立の垣根を越え、行事運営の悩みや生徒会活動のリアルな事例を気兼ねなく相談・共有し合えるコミュニティです。
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-num">03</span>
+            <h3>社会的な信頼と実績</h3>
+            <p>
+              過去5回開催、延べ130名以上が参加[cite: 2]。大手新聞社での開催やメディア掲載実績もあり[cite: 2]、教員や保護者の方にも安心して送り出していただける環境を整えています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 参加への導線 -->
+    <section class="section cta-section">
+      <div class="container text-center">
+        <h2>次回の交流会に参加してみませんか？</h2>
+        <p>生徒会役員の方はもちろん、生徒会活動に興味がある中高生ならどなたでも大歓迎です[cite: 2]。</p>
+        <div class="btn-wrap">
+          <a href="/event" class="btn btn-primary">次回イベント情報を見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-main {
+    padding-bottom: 5rem;
+  }
+  .page-header {
+    background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .sub-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .section {
+    padding: 4.5rem 0;
+  }
+  .section-gray {
+    background-color: var(--bg-gray);
+  }
+  .section-heading {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+
+  /* 理念ボックス */
+  .philosophy-box {
+    max-width: 780px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    text-align: center;
+  }
+  .philosophy-label {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  .philosophy-title {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+  }
+  .philosophy-text {
+    text-align: left;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+  .philosophy-text p + p {
+    margin-top: 1.25rem;
+  }
+
+  /* 特徴グリッド */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .feature-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.25rem 1.75rem;
+  }
+  .feature-num {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+  .feature-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* CTA */
+  .cta-section {
+    background-color: #ffffff;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .cta-section p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    .philosophy-box {
+      padding: 2rem 1.5rem;
+    }
+    .philosophy-title {
+      font-size: 1.6rem;
+    }
+    .feature-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

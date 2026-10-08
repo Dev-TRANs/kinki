@@ -1,0 +1,286 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const records = [
+  {
+    vol: 5,
+    date: "2026年9月23日（水・祝）",
+    venue: "関西大学第一高等学校",
+    schoolsCount: 16,
+    participantsCount: 41,
+    satisfaction: null,
+    highlight: "過去最多となる16校・41名が参加",
+    description: "再始動後初の開催となった第5回交流会。関西大学第一高等学校を会場に、過去最多となる16校41名の中高生が集まり、各校の生徒会活動の課題解決や行事企画についての熱心な意見交換が行われました。",
+  },
+  {
+    vol: 4,
+    date: "2024年11月10日（日）",
+    venue: "産経新聞大阪本社",
+    schoolsCount: 12,
+    participantsCount: 18,
+    satisfaction: "9.8 / 10",
+    sponsor: "産経新聞大阪本社 協賛",
+    participatingSchools: "履正社高等学校、松蔭高等学校、水都国際高等学校 ほか",
+    description: "産経新聞大阪本社様の後援・協賛のもと開催。参加者アンケートでは満足度9.8点を記録し、深い議論と交流が生まれました。",
+  },
+  {
+    vol: 3,
+    date: "2024年8月21日（水）",
+    venue: "産経新聞大阪本社",
+    schoolsCount: 8,
+    participantsCount: 12,
+    satisfaction: "9.5 / 10",
+    sponsor: "産経新聞大阪本社 協賛・メディア掲載",
+    participatingSchools: "上宮高等学校、関西大学第一高等学校、大阪夕日丘高等学校 ほか",
+    description: "第3回交流会では産経新聞ニュースに取り上げていただき、本団体の活動理念と中高生の熱い議論の様子が広く発信されました。",
+  },
+  {
+    vol: 2,
+    date: "2024年5月26日（日）",
+    venue: "関西大学第一高等学校",
+    schoolsCount: 12,
+    participantsCount: 40,
+    satisfaction: "9.3 / 10",
+    participatingSchools: "立命館高等学校、関西大学第一高等学校、東山高等学校 ほか",
+    description: "40名の中高生が参加。学校の枠を超えて同じ課題を持つ役員同士が語り合い、活発なネットワークが形成されました。",
+  },
+  {
+    vol: 1,
+    date: "2024年3月10日（日）",
+    venue: "近畿大学附属高等学校",
+    schoolsCount: 11,
+    participantsCount: 27,
+    satisfaction: null,
+    participatingSchools: "近畿大学附属高等学校、東山高等学校、立命館高等学校、関西大学北陽高等学校 ほか",
+    description: "近畿生徒会交流会の記念すべき第1回。11校27名が集まり、「生徒会役員を孤立させない」という理念に向けた最初の第一歩を踏み出しました。",
+  },
+];
+---
+
+<Layout 
+  title="これまでの開催実績 | 近畿生徒会交流会（K-SCEM）"
+  description="近畿生徒会交流会がこれまでに開催した第1回〜第5回交流会の実績、参加校数、人数、アンケート結果をご紹介します。"
+>
+  <Header />
+
+  <main class="page-main">
+    <div class="page-header">
+      <div class="container">
+        <p class="sub-title">PAST RECORDS</p>
+        <h1 class="page-title">これまでの開催実績</h1>
+      </div>
+    </div>
+
+    <!-- 累計サマリー -->
+    <section class="summary-section">
+      <div class="container">
+        <div class="summary-grid">
+          <div class="summary-card">
+            <span class="summary-label">開催回数</span>
+            <p class="summary-val">5<span>回</span></p>[cite: 2]
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">累計参加人数</span>
+            <p class="summary-val">138<span>名</span></p>[cite: 2]
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">最高満足度</span>
+            <p class="summary-val">9.8<span>/10</span></p>[cite: 2]
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 実績カード一覧 -->
+    <section class="section">
+      <div class="container">
+        <div class="records-list">
+          {records.map((item) => (
+            <article class="record-box">
+              <div class="record-meta">
+                <span class="record-badge">第{item.vol}回</span>
+                <span class="record-date">{item.date}</span>[cite: 2]
+              </div>
+
+              <h2 class="record-title">会場：{item.venue}</h2>[cite: 2]
+
+              <div class="record-chips">
+                <span class="chip-item">参加規模：<strong>{item.schoolsCount}校 / {item.participantsCount}名</strong></span>[cite: 2]
+                {item.satisfaction && (
+                  <span class="chip-item score">参加者満足度：<strong>{item.satisfaction}</strong></span>[cite: 2]
+                )}
+                {item.sponsor && <span class="chip-item tag-sponsor">{item.sponsor}</span>}[cite: 2]
+                {item.highlight && <span class="chip-item tag-highlight">{item.highlight}</span>}
+              </div>
+
+              <p class="record-desc">{item.description}[cite: 2]</p>
+
+              {item.participatingSchools && (
+                <p class="record-schools">
+                  <span class="schools-label">主な参加校：</span>{item.participatingSchools}[cite: 2]
+                </p>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-main {
+    padding-bottom: 5rem;
+  }
+  .page-header {
+    background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .sub-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  /* サマリーカウンター */
+  .summary-section {
+    padding: 2.5rem 0;
+    background-color: var(--bg-gray);
+    border-bottom: 1px solid var(--border);
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .summary-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .summary-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .summary-val {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-top: 0.25rem;
+  }
+  .summary-val span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-left: 0.25rem;
+  }
+
+  /* 実績一覧 */
+  .section {
+    padding: 4rem 0;
+  }
+  .records-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .record-box {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .record-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .record-badge {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+  }
+  .record-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .record-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .record-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .chip-item {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    background: var(--bg-gray);
+    border: 1px solid var(--border);
+  }
+  .chip-item.score strong {
+    color: #e11d48;
+  }
+  .tag-sponsor {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+  }
+  .tag-highlight {
+    background: #e0e7ff;
+    color: #3730a3;
+    border-color: #c7d2fe;
+  }
+
+  .record-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+  }
+  .record-schools {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px dashed var(--border);
+    padding-top: 0.75rem;
+  }
+  .schools-label {
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .summary-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .record-box {
+      padding: 1.5rem;
+    }
+  }
+</style>

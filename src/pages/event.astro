@@ -1,0 +1,278 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// 次回イベントの内容が変わった際はこちらの値を変更
+const eventConfig = {
+  isRecruiting: false, // 募集開始時は true に変更
+  vol: "第6回",
+  title: "第6回 近畿生徒会交流会",
+  date: "日程調整中（決定次第公開）",
+  time: "09:00〜14:30（予定）",
+  venue: "関西圏内施設 または 高等学校（調整中）",
+  station: "決定次第お知らせします",
+  capacity: "40名程度",
+  target: "生徒会に関わる中高生（役員・生徒会に興味がある人・卒業生）",
+  fee: "無料",
+  formUrl: "https://forms.gle/xxxxxxxxxxxx", // Googleフォーム等のURL
+};
+---
+
+<Layout 
+  title="次回イベント情報 | 近畿生徒会交流会（K-SCEM）"
+  description="次回開催予定の近畿生徒会交流会の募集要項・開催日程・参加申込フォームのご案内です。"
+>
+  <Header />
+
+  <main class="page-main">
+    <div class="page-header">
+      <div class="container">
+        <p class="sub-title">EVENT INFO</p>
+        <h1 class="page-title">次回イベント案内・参加申込</h1>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="event-card">
+          <div class="event-header">
+            <span class={`status-badge ${eventConfig.isRecruiting ? 'active' : ''}`}>
+              {eventConfig.isRecruiting ? "参加者募集中" : "次回開催準備中"}
+            </span>
+            <h2 class="event-title">{eventConfig.title}</h2>
+          </div>
+
+          <table class="event-table">
+            <tbody>
+              <tr>
+                <th>開催日時</th>
+                <td>{eventConfig.date} {eventConfig.time}</td>
+              </tr>
+              <tr>
+                <th>開催場所</th>
+                <td>{eventConfig.venue}</td>
+              </tr>
+              <tr>
+                <th>最寄駅</th>
+                <td>{eventConfig.station}</td>
+              </tr>
+              <tr>
+                <th>定員</th>
+                <td>{eventConfig.capacity}</td>
+              </tr>
+              <tr>
+                <th>対象</th>
+                <td>{eventConfig.target}[cite: 2]</td>
+              </tr>
+              <tr>
+                <th>参加費</th>
+                <td>{eventConfig.fee}</td>
+              </tr>
+              <tr>
+                <th>持ち物</th>
+                <td>筆記用具、自校の生徒会活動資料（あれば）</td>
+              </tr>
+              <tr>
+                <th>参加形態</th>
+                <td>非加盟制（学校・生徒会の承認なしで個人単位で参加可能です）[cite: 1]</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="event-action">
+            {eventConfig.isRecruiting ? (
+              <div class="action-box">
+                <a href={eventConfig.formUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  参加申込フォームへ進む
+                </a>
+                <p class="action-note">※定員に達し次第、受付を締め切る場合がございます。</p>
+              </div>
+            ) : (
+              <div class="action-box">
+                <p class="action-note wait-note">
+                  次回の開催日程および参加申込フォームは、決定次第こちらのページおよび公式Instagramにてご案内いたします。
+                </p>
+                <a href="https://www.instagram.com/kinki_seitokai/" target="_blank" rel="noopener noreferrer" class="btn btn-insta">
+                  公式Instagramで最新情報をチェック[cite: 3]
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- 参加にあたってのよくある質問 -->
+        <div class="faq-section">
+          <h3 class="faq-title">参加に関するよくある質問</h3>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h4>Q. 学校の先生に許可を取る必要はありますか？</h4>
+              <p>A. いいえ、不要です[cite: 1]。近畿生徒会交流会は「非加盟制」をとっており、学校の承認なしで個人の課外活動としてご参加いただけます[cite: 1]。</p>
+            </div>
+            <div class="faq-item">
+              <h4>Q. 生徒会長ではありませんが参加できますか？</h4>
+              <p>A. もちろん可能です。役職（副会長、書記、会計、各種委員長など）に関係なくご参加いただけます。また、今後生徒会に関わりたいと考えている一般の中高生も歓迎しています[cite: 2]。</p>
+            </div>
+            <div class="faq-item">
+              <h4>Q. 1人での参加でも大丈夫でしょうか？</h4>
+              <p>A. 毎回多くの参加者が1人で参加されています。アイスブレイクやグループワークを通じてすぐに打ち解けられるプログラムを用意していますのでご安心ください。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-main {
+    padding-bottom: 5rem;
+  }
+  .page-header {
+    background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .sub-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .section {
+    padding: 4rem 0;
+  }
+
+  .event-card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+  .event-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .status-badge {
+    display: inline-block;
+    background-color: #9ca3af;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+  }
+  .status-badge.active {
+    background-color: var(--accent);
+  }
+  .event-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .event-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2.5rem;
+  }
+  .event-table th, .event-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+  .event-table th {
+    width: 25%;
+    text-align: left;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .action-box {
+    text-align: center;
+  }
+  .action-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+  }
+  .wait-note {
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 2.25rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+  }
+  .btn-insta {
+    background-color: #fdf2f8;
+    color: #be185d;
+    border: 1px solid #fbcfe8;
+  }
+
+  /* FAQ */
+  .faq-section {
+    max-width: 760px;
+    margin: 4rem auto 0;
+  }
+  .faq-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .faq-item {
+    background: var(--bg-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .faq-item h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+  }
+  .faq-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .event-card {
+      padding: 2rem 1.25rem;
+    }
+    .event-table th, .event-table td {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+    .event-table th {
+      border-bottom: none;
+      padding-top: 0.75rem;
+    }
+  }
+</style>
