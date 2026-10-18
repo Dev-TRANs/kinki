@@ -5,48 +5,78 @@ import Footer from '../components/Footer.astro';
 
 const records = [
   {
-    title: "第3回 近畿生徒会リーダーズフォーラム",
-    date: "2024年8月",
-    venue: "大阪市内（対面・オンライン併催）",
-    attendees: "28校 65名",
-    summary: "「学校行事のDX推進」をメインテーマに、各校の取り組み事例共有とグループディスカッションを実施しました。"
+    vol: "第3回",
+    title: "第3回 近畿生徒会交流会",
+    date: "2024年8月21日(水)",
+    time: "11:00〜16:30（10:30受付開始）",
+    venue: "産経新聞 大阪本社",
+    tag: "産経新聞社 会場開催",
+    summary: "産経新聞社大阪本社様を会場としてお借りし開催。近畿圏の中学・高校生徒会役員が集まり、他校の課題や活動事例についての意見交換およびワークショップを実施しました。"
   },
   {
-    title: "第2回 定例オンライン意見交換会",
-    date: "2024年5月",
-    venue: "オンライン（Zoom）",
-    attendees: "18校 40名",
-    summary: "校則改定に向けた生徒会アンケートの設計手法について、先進校の役員から実践例を共有しました。"
+    vol: "第2回",
+    title: "第2回 近畿生徒会交流会",
+    date: "2024年5月26日(日)",
+    time: "10:00〜15:30（9:30開場）",
+    venue: "関西大学第一高等学校",
+    theme: "共有する力、任せる力",
+    tag: "ネゴシエーション企画 / 作るシリーズ",
+    summary: "「共有する力、任せる力」をテーマに開催。午前のテーマ別トークに続き、午後には役割分担を行って企画発表を行う『作るシリーズ』や、文化祭・体育祭の限られた予算を巡る折衝を模擬体験する『ネゴシエーション企画』を実施しました。"
   },
   {
-    title: "第1回 生徒会役員キックオフ交流会",
-    date: "2024年1月",
-    venue: "京都府内",
-    attendees: "15校 32名",
-    summary: "新任役員同士のネットワーキング、役員業務の引き継ぎに関する悩み相談会を開催しました。"
+    vol: "第1回",
+    title: "第1回 近畿生徒会交流会",
+    date: "2024年3月10日(日)",
+    time: "13:00〜（12:30開場）",
+    venue: "近畿大学附属高等学校（近鉄八戸ノ里駅）",
+    theme: "学校の垣根を超えた合同企画",
+    tag: "プレゼン企画 / 万博チーム結成",
+    summary: "従来の「交流だけで終わる」スタイルではなく具体的なアクションに繋げる場を目指して初開催。5〜6人のグループで「学校の垣根を超えた合同企画」をテーマにプレゼンを行い、1位を獲得した7班【食の未来プロジェクト】は「近畿生徒会万博チーム」として実際のプロジェクト始動へと繋がりました。"
   }
 ];
 ---
 
 <Layout title="開催実績 | 近畿生徒会交流会 (K-SCEM)">
   <Header />
-  
-  <main class="records-page">
-    <div class="container">
-      <div class="page-header">
-        <h1 class="page-title">開催実績</h1>
-        <p class="page-desc">これまでに開催された定例交流会、フォーラムなどの開催レポートと実績です。</p>
-      </div>
 
+  <main class="records-page">
+    <div class="page-header">
+      <div class="container">
+        <p class="sub-title">ARCHIVE</p>
+        <h1 class="page-title font-brand">開催実績・レポート</h1>
+        <p class="page-desc">近畿圏の中学・高校生徒会役員が集い、議論と交流を深めてきたこれまでの開催レポートです。</p>
+      </div>
+    </div>
+
+    <div class="container content-area">
       <div class="records-grid">
         {records.map((item) => (
           <article class="record-card">
-            <div class="record-date">{item.date}</div>
-            <h2 class="record-title">{item.title}</h2>
-            <div class="record-meta">
-              <span class="meta-item"><strong>会場:</strong> {item.venue}</span>
-              <span class="meta-item"><strong>参加規模:</strong> {item.attendees}</span>
+            <div class="record-meta-top">
+              <span class="vol-badge">{item.vol}</span>
+              <span class="record-date">{item.date}</span>
+              <span class="tag-pill">{item.tag}</span>
             </div>
+            
+            <h2 class="record-title font-brand">{item.title}</h2>
+
+            <div class="record-info-table">
+              <div class="info-row">
+                <span class="info-label">会場</span>
+                <span class="info-val">{item.venue}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">時間</span>
+                <span class="info-val">{item.time}</span>
+              </div>
+              {item.theme && (
+                <div class="info-row">
+                  <span class="info-label">テーマ</span>
+                  <span class="info-val highlight-theme">「{item.theme}」</span>
+                </div>
+              )}
+            </div>
+
             <p class="record-summary">{item.summary}</p>
           </article>
         ))}
@@ -58,71 +88,45 @@ const records = [
 </Layout>
 
 <style>
-  .records-page {
-    padding: 3rem 0;
-  }
-
+  .records-page { background-color: var(--kscem-cream); padding-bottom: 6rem; }
   .page-header {
-    text-align: center;
-    margin-bottom: 3rem;
+    background: linear-gradient(135deg, rgba(62, 107, 137, 0.12) 0%, rgba(250, 249, 240, 1) 100%);
+    padding: 4.5rem 0 3.5rem; text-align: center; border-bottom: 1px solid var(--border-light);
   }
-
-  .page-title {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 0.75rem;
-    color: var(--text-main);
-  }
-
-  .page-desc {
-    color: var(--text-muted);
-  }
-
-  .records-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
+  .sub-title { font-size: 0.85rem; font-weight: 700; color: var(--kscem-blue); letter-spacing: 0.12em; margin-bottom: 0.5rem; }
+  .page-title { font-size: 2.25rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--kscem-dark-blue); }
+  .page-desc { color: var(--text-sub); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+  .content-area { margin-top: 3.5rem; }
+  .records-grid { display: flex; flex-direction: column; gap: 2rem; max-width: 820px; margin: 0 auto; }
   .record-card {
-    background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.75rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    background: #ffffff; border: 1px solid var(--border-light);
+    border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-
-  .record-date {
-    display: inline-block;
-    background-color: var(--primary-light);
-    color: var(--primary);
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
-    margin-bottom: 0.75rem;
+  .record-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22, 119, 255, 0.08); }
+  .record-meta-top { display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; }
+  .vol-badge {
+    background-color: var(--kscem-blue); color: #ffffff;
+    font-size: 0.85rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 6px;
   }
-
-  .record-title {
-    font-size: 1.35rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-main);
+  .record-date { font-size: 0.9rem; font-weight: 600; color: var(--text-sub); }
+  .tag-pill {
+    background-color: rgba(250, 204, 21, 0.25); color: #854d0e;
+    font-size: 0.8rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 6px; margin-left: auto;
   }
-
-  .record-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px dashed var(--border);
+  .record-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--kscem-dark-blue); }
+  .record-info-table {
+    background-color: #FAF9F0; border-radius: 10px; padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; border: 1px solid var(--border-light);
   }
-
-  .record-summary {
-    color: var(--text-main);
-    line-height: 1.7;
-    font-size: 0.95rem;
+  .info-row { display: flex; font-size: 0.92rem; }
+  .info-label { width: 80px; font-weight: 700; color: var(--text-sub); flex-shrink: 0; }
+  .info-val { color: var(--text-main); font-weight: 500; }
+  .highlight-theme { font-weight: 700; color: var(--kscem-blue); }
+  .record-summary { color: var(--text-main); line-height: 1.85; font-size: 0.98rem; }
+  @media (max-width: 768px) {
+    .record-card { padding: 1.75rem 1.25rem; }
+    .tag-pill { margin-left: 0; width: 100%; }
+    .info-row { flex-direction: column; gap: 0.2rem; }
   }
 </style>
