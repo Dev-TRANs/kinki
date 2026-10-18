@@ -9,7 +9,7 @@
         <span class="mark-blue"></span>
       </div>
       <div class="brand-text">
-        <span class="brand-title font-brand">近畿生徒会</span>
+        <span class="brand-title font-brand">近畿生徒会交流会</span>
         <span class="brand-sub">K-SCEM</span>
       </div>
     </a>
@@ -54,14 +54,14 @@
   .mark-yellow {
     width: 18px;
     height: 28px;
-    background-color: #FACC15;
+    background-color: var(--kscem-yellow);
     border-radius: 14px 4px 14px 14px;
     transform: rotate(-10deg);
   }
   .mark-blue {
     width: 18px;
     height: 28px;
-    background-color: #1677FF;
+    background-color: var(--kscem-blue);
     border-radius: 14px 14px 4px 14px;
     margin-left: -6px;
     transform: rotate(10deg);
@@ -71,14 +71,14 @@
     flex-direction: column;
   }
   .brand-title {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    color: #1E293B;
+    color: var(--kscem-dark-blue);
   }
   .brand-sub {
     font-size: 0.7rem;
     font-weight: 700;
-    color: #1677FF;
+    color: var(--kscem-blue);
   }
   .nav-links {
     display: flex;
@@ -88,15 +88,15 @@
   .nav-links a {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #1E293B;
+    color: var(--kscem-dark-blue);
     text-decoration: none;
     transition: color 0.2s;
   }
   .nav-links a:hover {
-    color: #1677FF;
+    color: var(--kscem-blue);
   }
   .nav-cta {
-    background-color: #1677FF !important;
+    background-color: var(--kscem-blue) !important;
     color: #ffffff !important;
     padding: 0.55rem 1.35rem;
     border-radius: 9999px;
@@ -105,7 +105,7 @@
     transition: background-color 0.2s;
   }
   .nav-cta:hover {
-    background-color: #0958d9 !important;
+    background-color: var(--kscem-blue-hover) !important;
   }
   @media (max-width: 768px) {
     .nav-links { display: none; }

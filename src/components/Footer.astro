@@ -4,19 +4,22 @@
 <footer class="site-footer">
   <div class="container footer-content">
     <div class="footer-brand">
-      <h3 class="footer-title">近畿生徒会交流会 (K-SCEM)</h3>
-      <p class="org-tagline">生徒会役員を孤立させない</p>
+      <div class="brand-text">
+        <h3 class="footer-title font-brand">近畿生徒会交流会</h3>
+        <p class="brand-sub">Kinki School Council Exchange Meeting (K-SCEM)</p>
+      </div>
+      <p class="org-tagline">生徒会役員を、孤立させない。</p>
       <p class="org-desc">
-        学校の承認不要・個人単位で気軽に参加できる、近畿圏の中学・高校生徒会役員および経験者のためのオープンなネットワークです。
+        学校の承認不要・個人単位で気軽に参加できる、近畿圏の中学・高校生徒会役員および経験者のためのオープンネットワークです。
       </p>
     </div>
     
     <div class="footer-nav">
       <div class="nav-column">
-        <h4>サイトマップ</h4>
+        <h4>コンテンツ</h4>
         <ul>
           <li><a href="/kinki/">トップページ</a></li>
-          <li><a href="/kinki/about/">団体理念・特徴</a></li>
+          <li><a href="/kinki/about/">理念・特徴</a></li>
           <li><a href="/kinki/event/">次回イベント</a></li>
           <li><a href="/kinki/records/">開催実績</a></li>
           <li><a href="/kinki/contact/">お問い合わせ</a></li>
@@ -24,10 +27,9 @@
       </div>
 
       <div class="nav-column">
-        <h4>関連リンク</h4>
+        <h4>公式SNS</h4>
         <ul>
-          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">公式X (Twitter)</a></li>
-          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">公式Instagram</a></li>
+          <li><a href="https://www.instagram.com/kinki_seitokai/" target="_blank" rel="noopener noreferrer">公式Instagram</a></li>
         </ul>
       </div>
     </div>
@@ -42,8 +44,8 @@
 
 <style>
   .site-footer {
-    background-color: #111827;
-    color: #e5e7eb;
+    background-color: var(--kscem-dark-blue);
+    color: #ffffff;
     padding-top: 3.5rem;
     margin-top: 4rem;
   }
@@ -56,23 +58,32 @@
   }
 
   .footer-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 0.5rem;
+  }
+
+  .brand-sub {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-bottom: 0.75rem;
   }
 
   .org-tagline {
-    color: #60a5fa;
+    display: inline-block;
+    background-color: var(--kscem-yellow);
+    color: #452600;
     font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
   }
 
   .org-desc {
     font-size: 0.85rem;
     line-height: 1.7;
-    color: #9ca3af;
+    color: #E2E8F0;
   }
 
   .footer-nav {
@@ -85,6 +96,9 @@
     font-size: 0.95rem;
     color: #ffffff;
     margin-bottom: 1rem;
+    border-bottom: 2px solid var(--kscem-yellow);
+    padding-bottom: 0.25rem;
+    display: inline-block;
   }
 
   .nav-column ul {
@@ -98,21 +112,22 @@
   }
 
   .nav-column a {
-    color: #9ca3af;
+    color: #CBD5E1;
     font-size: 0.85rem;
+    text-decoration: none;
     transition: color 0.2s;
   }
 
   .nav-column a:hover {
-    color: #ffffff;
+    color: var(--kscem-yellow);
   }
 
   .footer-bottom {
-    border-top: 1px solid #1f2937;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding: 1.5rem 0;
     text-align: center;
     font-size: 0.8rem;
-    color: #6b7280;
+    color: #94A3B8;
   }
 
   @media (max-width: 768px) {
