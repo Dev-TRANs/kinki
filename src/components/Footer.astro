@@ -36,8 +36,11 @@
   </div>
 
   <div class="footer-bottom">
-    <div class="container">
+    <div class="container footer-bottom-inner">
       <p>&copy; {new Date().getFullYear()} 近畿生徒会交流会 (K-SCEM). All rights reserved.</p>
+      <p class="created-by">
+        Created by <a href="https://trans.stki.org/" target="_blank" rel="noopener noreferrer">TRANs</a>
+      </p>
     </div>
   </div>
 </footer>
@@ -125,15 +128,45 @@
   .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding: 1.5rem 0;
-    text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #94A3B8;
+  }
+
+  .footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .created-by {
+    font-size: 0.85rem;
+    color: #94A3B8;
+  }
+
+  .created-by a {
+    color: var(--kscem-yellow);
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .created-by a:hover {
+    text-decoration: underline;
+    opacity: 0.85;
   }
 
   @media (max-width: 768px) {
     .footer-content {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+
+    .footer-bottom-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
     }
   }
 </style>
